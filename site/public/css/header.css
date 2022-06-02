@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@300&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+:root
+{   
+    --white: #fff;
+    --grey: #ecebeb;
+    --black1: #222;
+    --black2: #999;
+    --black3: rgb(240, 240, 240);
+    --Vermelho: rgb(168, 8, 40);
+    --vermelho2: #F9004D;
+    /* nota usar cores preto,cinza,uma cor quase vinho,*/
+}
+
+.div-contato{
+    height: 4vh;
+    width: 100%;
+    background-color: var(--black1);
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse ;
+    
+}
+.top-contato {
+    margin-right: 8vw;
+    font-size: 0.8em;
+    width: 50vw;
+    list-style: none;
+    display: flex;
+    color: var(--black2) ;
+    justify-content: space-evenly   
+}
+.li-contato > a{
+    font-size: 1em;
+    color: white;
+    text-decoration: none;
+}
+.li-contato > a:hover{
+    font-size: 1em;
+    color: rgb(155, 155, 155);
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+}
+
+/* menu */
+
+
+
+.nav__links > li,a,button{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+    
+}
+header{
+    display: flex;
+    
+    align-items: center;
+    padding: 30px 10%;
+    position: relative;
+    justify-content: center;
+    
+}
+.logo{
+    cursor: pointer;
+    height: auto;
+    width: 150px;
+    
+    
+    
+}
+.nav__links{
+    list-style: none;
+    
+    align-items: center;
+    display: flex;
+}
+.navnav{
+    
+    list-style: none;
+    letter-spacing: 2px;
+    display: inline-block;
+}
+.navnav  span{
+    list-style: none;
+    
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+.nav__links li {
+    
+    display: inline-block;
+    padding: 0px 20px;
+}
+.nav__links li a {
+    
+    transition: 0.5s ease-in-out;
+}
+.nav__links li a:hover {
+    
+    color: var(--black2);
+}
+.nav__links a{
+    letter-spacing: 0.5px;
+    position: relative;
+    padding: 0 10px;
+}
+.nav__links a::after{
+    content: "";
+    position: absolute;
+    background-color: var(--white);
+    height: 2px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s ease-in-out;
+}
+
+.nav__links a:hover::after{
+    width: 100%;
+
+}
+
