@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/top.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Suites</a></li>
+            <li><a href="#">sobre</a></li>
+            <li><a href="#">Contato</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Cadastro</a></li>
+        </ul>
+    </header>
+
+    
+    <script type="text/javascript">
+    window.addEventListener("scroll", function(){
+    var header = document.querySelector("header");
+    header.classList.toggle("sticky", window.scrolly > 0);
+})
+    </script>
+    
+</body>
+</html>
