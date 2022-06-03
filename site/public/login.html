@@ -6,13 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AcquaTec | Login</title>
+    <title>Nude Motel | Login</title>
 
     <script src="./js/funcoes.js"></script>
 
-    <link rel="icon" href="./assets/icon/favicon.ico">
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/cadastro.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -20,30 +21,27 @@
 </head>
 
 <body>
+    <header>
+        <img class="logo" src="img/logo2.png" alt="logo">
+        <nav>
+            <ul class="nav__links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Suites</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Login </a> | <a href="cadastro.html"> Cadastro</a></li>
+            </ul>
+        </nav>
 
+    </header>
     <!--Header-->
-    <div class="fundo-login">
-    <div class="carroe">
-        <header>
-
-
-            <nav>
-                <ul class="nav__links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Suites</a></li>
-                    <li><a href="#">Sobre</a></li>
-                    <img class="logo" src="img/logook.png" alt="logo">
-                    <li><a href="#">Contato</a></li>
-                    <div class="navnav">
-                        <li><a href="login.html">Login</a><span>|</span><a href="cadastro.html">Cadastro</a></li>
-                    </div>
-
-                </ul>
-            </nav>
-
-        </header>
-
+    <div class="card-desconto">
+        <h1>Descontos</h1>
+        <label>Entre com seu login abaixo e obtenha os nossos descontos e cortesias exclusivas</label>
     </div>
+    <div class="fundo-login">
+    
+
 
 
     <div class="banner">
@@ -53,29 +51,26 @@
             </div>
         </div>
         <div class="container">
-            <div class="card">
+            <div class="form2" action="">
                 <h2>Olá de volta!</h2>
                 
                 
                     <div class="single-input">
 
-                        <input class="input" id="email_input" type="text" placeholder="Login" required><span
-                            for="E-mail">E-mail:</span>
+                        <input required class="input" id="email_input" type="text"><label for="E-mail">E-mail:</label>
+                        
 
                     </div>
                     <div class="single-input">
 
-                        <input class="input" id="senha_input" type="password" placeholder="******"
-                            required><span>Senha:</span>
+                        <input class="input" id="senha_input" type="password" required><label>Senha:</label>
                     </div>
                     <button class="btn" onclick="entrar()">Entrar</button>
-
-
-                
-
-                <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/circle-loading.gif" id="loading-gif">
-                </div>
+                    <label class="labell">Não tem cadastro?<a class="aa1" href="cadastro.html"> Cadastra-se</a></label>
+                    <div id="div_aguardar" class="loading-div">
+                        <img src="./assets/circle-loading.gif" id="loading-gif">
+                        
+                    </div>
 
                 <div id="div_erros_login">
 

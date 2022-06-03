@@ -13,7 +13,7 @@ body {
 }
 :root
 {   
-    --white: rgba(255, 255, 255, 0.836);
+    --white: rgb(255, 255, 255);
     --grey: #ecebeb;
     --black1: #222;
     --black4: rgb(19, 19, 19);
@@ -49,7 +49,7 @@ body {
 
 .banner .container {
   height: 400px;
-  font-size: 36px;
+  
   justify-content: center;
   align-items: center;
 }
@@ -112,36 +112,6 @@ body {
 
 /* LOGIN */
 
-.banner .container .card {
-  background-color: #e5e5e5;
-  height: fit-content;
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  color: palevioletred;
-  align-items: center;
-  border-radius: 4px;
-}
-
-.card {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  justify-content: flex-start;
-  display: flex;
-}
-
-.card h2 {
-  font-size: 30px;
-}
-
-.card h4 {
-  font-size: 16px;
-}
-
-.banner #div_erros_login {
-  margin-top: 15px;
-}
 
 button {
   cursor: pointer;
@@ -184,13 +154,58 @@ button {
 }
 
 form{
+  width: 910px;
+  padding: 2%;
+  
+  height: 340px;
+  border-radius: 5px;
+  justify-content: space-around;
+  flex-direction: row;
+  display: flex;
+  margin-left: 20%;
+}
+.form-separacao{
+  height: 490;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+.form-separacao1{
+  height: 490;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+.form2{
   width: 410px;
   padding: 2%;
-  background-color: #16161875;
-  height: 450px;
-  margin-top: -30px;
+  height: 290px;
+  margin-top: -40px;
   border-radius: 5px;
-  margin-left: 35%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: 25%;
+ color: var(--black1);
+ 
+}
+.labell{
+  margin-left: 120px;
+}
+.form2 a{
+  justify-content: flex-end;
+  
+  
+}
+.labell2{
+  color: var(--black1);
+  margin-left: 62px;
+}
+.aa{
+  color: var(--amarelo);
+}
+.aa1{
+  color: var(--amarelo);
 }
 
 .single-input{
@@ -201,7 +216,7 @@ form{
   position: absolute;
   bottom: 5px;
   left: 0;
-  color: var(--white);
+  color: var(--black1);
   cursor: text;
   transition: 0.5s ease-in-out;
 }
@@ -211,38 +226,39 @@ form{
   padding: 10px;
   border: 0;
   background-color: transparent;
-  border-bottom: 2px solid var(--white);
+  border-bottom: 2px solid var(--black1);
   outline: 0;
   font-size: 16px;
-  color: var(--white);
+  color: var(--black1);
   transition: 0.5s ease-in-out;
   
 }
 
 .input:focus,
 .input:valid{
-  border-bottom: 2px solid var(--white);
+  border-bottom: 2px solid var(--black2);
 }
 .input:focus ~ label,
 .input:valid ~ label{
   transform: translateY(-30px);
   font-size: 12px;
-  color: var(--white);
+  color: var(--black2);
 }
 
 
 .btn {
+  
   font-family: "Barlow", sans-serif;
   border:none;
   border-radius: 10px;
   font-weight: 600;
   font-size: 18px;
   padding: 10px 15px;
-  color: var(--black1);
-  background-color: var(--grey);
+  color: var(--grey);
+  background-color: var(--black1);
   width: 95%;
   align-self: center;
-  margin-top: 5px;
+  margin-top: 28px;
   box-shadow: 0 7px 25px rgb(0 0 0 / 8%);
   transition: 0.5s ease-in-out;
 }
@@ -252,7 +268,7 @@ form{
   
 }
 .btn:active{
-  margin-top: 5px;
+  
   background-color: var(--amarelo2);
   transition: none ;
 }
@@ -260,7 +276,7 @@ form{
 .img-fundo{
   margin: 0;
   width: 100%;
-  height: 103vh;
+  height: 88vh;
   background-image: url(regis.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -319,9 +335,7 @@ form{
   left: 25%;
 }
 
-.header-left h1 {
-  color: #32b9cd;
-}
+
 
 .hello {
   width: 100%;
@@ -392,10 +406,10 @@ form{
   flex-direction: column
 }
 
-.fundo-login{
+/* .fundo-login{
   background-image: url(fundo-login.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 100vh;
-}
+  height: 87.5vh;
+} */

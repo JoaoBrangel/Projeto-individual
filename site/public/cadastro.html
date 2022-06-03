@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Nude Motel | Cadastro</title>
-    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/cadastro.css">
 
     <script src="./js/funcoes.js"></script>
     <link rel="icon" href="img/logo.png">
@@ -21,27 +21,32 @@
 </head>
 
 <body>
-    <div class="img-fundo">
+    <header>
+        <img class="logo" src="img/logo2.png" alt="logo">
+        <nav>
+            <ul class="nav__links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Suites</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="login.html">Login </a> | <a href="#"> Cadastro</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <div class="card-desconto">
+        <h1>CADASTRE-SE</h1>
+        <label>Entre com seu login abaixo e obtenha os nossos descontos e cortesias exclusivas</label>
+    </div>
+    <div class="fundo-login">
+    
+
+
+   
     <div class="carroe">
         <div class="cor">
-        <header>
-            
-
-            <nav>
-                <ul class="nav__links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Suites</a></li>
-                    <li><a href="#">Sobre</a></li>
-                    <img class="logo" src="img/logook.png" alt="logo">
-                    <li><a href="#">Contato</a></li>
-                    <div class="navnav">
-                        <li><a href="login.html">Login</a><span>|</span><a href="#">Cadastro</a></li>
-                    </div>
-
-                </ul>
-            </nav>
         
-        </header>
     </div>
     </div>
 
@@ -63,6 +68,7 @@
                          Assim que inserir vá para o script abaixo.
                      -->
                 <form action="">
+                <div class="form-separacao">
                     <div class="single-input">
                         <input required class="input" id="nome_input" type="text"><label for="nome">Nome</label>
                     </div>
@@ -70,29 +76,38 @@
                         <input required type="text" class="input" id="email_input"><label
                             for="E-mail">meuemail@provedor.com</label>
                     </div>
+                
+                
                     <div class="single-input">
                         <input required type="text" class="input" id="rg_input"><label for="Rg">Rg</label>
+                    </div>
+                </div>
+                    <div class="form-separacao1">
+                    <div class="single-input">
+                        <input required type="date" class="input" id="rg_input">
                     </div>
                     <div class="single-input">
                         <input required class="input" id="senha_input" type="password">
                         <label for="senha">Senha</label>
                     </div>
-
+                
                     <button class="btn" onclick="cadastrar()">Cadastrar</button>
+                    <label class="labell2">Ja tem algum cadastro?<a class="aa" href="login.html"> Logar</a></label>
+                </div>
 
-
-                    <div id="div_aguardar" class="loading-div">
-                        <img src="./assets/circle-loading.gif" id="loading-gif">
-                    </div>
-
-                    <div id="div_erros_login">
-
-                    </div>
+                    
                 </form>
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/circle-loading.gif" id="loading-gif">
+                </div>
+
+                <div id="div_erros_login">
+
+                </div>
             </div>
         
         </div>
-    </div>  
+    
 </body>
 
 </html>
