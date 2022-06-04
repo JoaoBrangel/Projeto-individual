@@ -40,90 +40,139 @@
         <label>Entre com seu login abaixo e obtenha os nossos descontos e cortesias exclusivas</label>
     </div>
     <div class="fundo-login">
-    
 
 
-   
-    <div class="carroe">
-        <div class="cor">
-        
-    </div>
-    </div>
 
 
-    <div class="banner ">
-        <div class="alerta_erro">
-            <div class="card_erro" id="cardErro">
-                <span id="mensagem_erro"></span>
+        <div class="carroe">
+            <div class="cor">
+
             </div>
         </div>
-        
-        <div class="card ">
-            
 
-            <div class="formulario">
 
-                <!--
+        <div class="banner ">
+            <div class="alerta_erro">
+                <div class="card_erro" id="cardErro">
+                    <span id="mensagem_erro"></span>
+                </div>
+            </div>
+
+            <div class="card ">
+
+
+                <div class="formulario">
+
+                    <!--
                          Para inserir mais um campo, copie uma das inputs abaixo.
                          Assim que inserir vá para o script abaixo.
                      -->
-                <form action="">
-                <div class="form-separacao">
-                    <div class="single-input">
-                        <input required class="input" id="nome_input" type="text"><label for="nome">Nome</label>
+                    <form action="">
+                        <div class="form-separacao">
+                            <div class="single-input">
+                                <input required class="input" id="nome_input" type="text"><label for="nome">Nome</label>
+                            </div>
+                            <div class="single-input">
+                                <input required type="text" class="input" id="email_input"><label
+                                    for="E-mail">meuemail@provedor.com</label>
+                            </div>
+
+
+                            <div class="single-input">
+                                <input required type="text" class="input" id="rg_input"><label for="Rg">Rg</label>
+                            </div>
+                        </div>
+                        <div class="form-separacao1">
+                            <div class="single-input">
+                                <input required type="date" class="input" id="data_input">
+                            </div>
+                            <div class="single-input">
+                                <input required class="input" id="senha_input" type="password">
+                                <label for="senha">Senha</label>
+                            </div>
+
+                            <button class="btn" onclick="cadastrar()">Cadastrar</button>
+                            <button class="btn" onclick="teste()">teste</button>
+                            <label class="labell2">Ja tem algum cadastro?<a class="aa" href="login.html">
+                                    Logar</a></label>
+                        </div>
+
+
+                    </form>
+                    <div id="div_aguardar" class="loading-div">
+                        <img src="./assets/circle-loading.gif" id="loading-gif">
                     </div>
-                    <div class="single-input">
-                        <input required type="text" class="input" id="email_input"><label
-                            for="E-mail">meuemail@provedor.com</label>
+
+                    <div id="div_erros_login">
+
                     </div>
-                
-                
-                    <div class="single-input">
-                        <input required type="text" class="input" id="rg_input"><label for="Rg">Rg</label>
-                    </div>
-                </div>
-                    <div class="form-separacao1">
-                    <div class="single-input">
-                        <input required type="date" class="input" id="rg_input">
-                    </div>
-                    <div class="single-input">
-                        <input required class="input" id="senha_input" type="password">
-                        <label for="senha">Senha</label>
-                    </div>
-                
-                    <button class="btn" onclick="cadastrar()">Cadastrar</button>
-                    <label class="labell2">Ja tem algum cadastro?<a class="aa" href="login.html"> Logar</a></label>
                 </div>
 
-                    
-                </form>
-                <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/circle-loading.gif" id="loading-gif">
-                </div>
-
-                <div id="div_erros_login">
-
-                </div>
             </div>
-        
-        </div>
-    
+
 </body>
 
 </html>
 
 <script>
+    function teste() {
+        var diferencaAnos = d.getFullYear() - nascimento.getFullYear();
+        if (new Date(d.getFullYear(), d.getMonth(), d.getDate()) <
+            new Date(d.getFullYear(), nascimento.getMonth(), nascimento.getDate()))
+            diferencaAnos--;
+        return diferencaAnos;
+    
+
+    $("input").datepicker();
+
+
+    $("button#teste").click(function () {
+        var nascimento = $("input:eq(3)").datepicker("getDate");
+        var d = new Date,
+             dia = date.getDate()
+             mes = date.getMonth()+1
+             ano = date.getFullYear();
+             
+
+        if (nascimento && d)
+            $("span").text(idade(nascimento, d) + " anos");
+    });
+
+    console.log(idade(new Date(1980, 11, 11), new Date()));
+    console.log(idade(new Date(2011, 1, 15), new Date()));
+    console.log(idade(new Date(1993, 4, 31), new Date()));
+}
+
+
+
+
     function cadastrar() {
         aguardar();
+
+        //Barrando com a idade do cliente -- Entregavel //
+
+
+        // if (idade < 18) {
+
+        //     return false;
+        // } else {
+
+        // }
+
+
+
+
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
         var nomeVar = nome_input.value;
         var emailVar = email_input.value;
+        var rgVar = rg_input.value;
+        var dataNascVar = data_input.value
         var senhaVar = senha_input.value;
-        var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+
+        if (nomeVar == "" || emailVar == "" || rgVar == "" || dataNascVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
@@ -133,6 +182,7 @@
         else {
             setInterval(sumirMensagem, 5000)
         }
+
 
         // Enviando o valor da nova input
         fetch("/usuarios/cadastrar", {
@@ -145,6 +195,8 @@
                 // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
                 emailServer: emailVar,
+                rgServer: rgVar,
+                dataNascVar: dataNascVar,
                 senhaServer: senhaVar
             })
         }).then(function (resposta) {
