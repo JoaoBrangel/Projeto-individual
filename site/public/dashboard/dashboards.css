@@ -4,7 +4,21 @@
 body {
   font-family: "Exo 2", sans-serif;
 }
-
+:root
+{   
+    --white: rgb(255, 255, 255);
+    --grey: #ecebeb;
+    --black1: #222;
+    --black4: rgb(19, 19, 19);
+    --black2: #999;
+    --black3: rgb(218, 218, 218);
+    --Vermelho: rgb(168, 8, 40);
+    --amarelo: #ecec50;
+    --amarelo2: #a8a838;
+    --azul: 	#4169E1;
+    --azul2: 	#264191;
+    
+}
 .dash-right .avisos {
   width: 100%;
   /* border: 3px solid pink; */
@@ -214,12 +228,7 @@ body {
   /* background-color: #c7c7c7; */
 }
 
-.btns-dash {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-}
+
 
 .graph {
   width: 80%;
@@ -243,4 +252,9 @@ body {
   background-color: white;
   margin: 5px;
   border-radius: 3px;
+}
+
+/* Corpo do analitycs */
+.dash{
+  background-color: var(--grey);
 }

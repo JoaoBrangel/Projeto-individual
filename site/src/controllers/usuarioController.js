@@ -67,6 +67,7 @@ function cadastrar(req, res) {
     var rg = req.body.rgServer
     var dataNasc = req.body.dataNascVar
     var senha = req.body.senhaServer;
+    var CanalP = req.body.canalServer;
 
     // Faça as validações dos valores
     if (nome == undefined) {
@@ -78,7 +79,7 @@ function cadastrar(req, res) {
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email,rg ,dataNasc, senha)
+        usuarioModel.cadastrar(nome, email,rg ,dataNasc, senha,CanalP)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -87,7 +88,7 @@ function cadastrar(req, res) {
                 function (erro) {
                     console.log(erro);
                     console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        "\Houve um erro ao realizar o cadastro! Erro: ",
                         erro.sqlMessage
                     );
                     res.status(500).json(erro.sqlMessage);

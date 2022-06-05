@@ -23,6 +23,7 @@
 </head>
 
 <body onload="validarSessao(), atualizarFeed()">
+    <!-- <body onload="validarSessao()"> -->
 
     <div class="janela">
         <div class="header-left">
@@ -56,23 +57,34 @@
 
         </div>
 
-        <div class="dash">
-            <div class="btns-dash">
-                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-                <button class="btn-chart btn-pink" onclick="obterDadosGrafico(1)">Aquario 1</button>
-                <button class="btn-chart btn-white" onclick="obterDadosGrafico(2)">Aquario 2</button>
-                <button class="btn-chart btn-white" onclick="obterDadosGrafico(3)">Aquario 3</button>
-                <button class="btn-chart btn-white" onclick="obterDadosGrafico(4)">Aquario 4</button>
-            </div>
-            <div>
-                <h3 class="tituloGraficos">
-                    <span id="tituloAquario">123</span>
-                </h3>
-            </div>
-            <div class="graph">
-                <canvas id="canvas_grafico"></canvas>
-            </div>
+        <div class="banner ">
+            
         </div>
+        <div class="dash">
+            <select id="select_canal">
+                <option value="0">Canais</option>
+                <option value="1">Sbt</option>
+                <option value="2">Globo</option>
+                <option value="3">Record</option>
+                <option value="4">redetv</option>
+                <option value="5">gazeta</option>
+                <option value="6">Band</option>
+                <option value="7">top tv</option>
+                <option value="8">sportv</option>
+                <option value="9">ESPN</option>
+                <option value="10">multishow</option>
+                <option value="11">Band news</option>
+                <option value="12">tel Action</option>
+                <option value="13">tel pipoca</option>
+                <option value="14">tel Premium</option>
+            </select>
+            <div class="alerta_erro">
+                <div class="card_erro" id="cardErro">
+                    <span id="mensagem_erro"></span>
+                </div>
+            </div>
+        <button onclick="RegistrarCanal()">Registar canal</button>
+    </div>
     </div>
 
 
@@ -88,27 +100,11 @@
 
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-    verificar_autenticacao();
+    //verificar_autenticacao();
 
-    function alterarTitulo(idAquario) {
-        var tituloAquario = document.getElementById("tituloAquario")
-        tituloAquario.innerHTML = "Últimas medidas de Temperatura e Umidade do <span style='color: #e6005a'>Aquário " + idAquario + "</span>"
-    }
-
-    // O gráfico é construído com três funções:
-    // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
-    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
-    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
-
-    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de medidas.
-    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
-    // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
-
-    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
-    //     Para ajustar o "select", ajuste o comando sql em src/models
+    // altere aqui como os dados serão exibidos
+    // e como são recuperados do BackEnd
     function obterDadosGrafico(idAquario) {
-        alterarTitulo(idAquario)
-
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
         }
@@ -128,11 +124,10 @@
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
+
     }
 
-    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
-    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
-    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    // só altere aqui se souber o que está fazendo!
     function plotarGrafico(resposta, idAquario) {
         console.log('iniciando plotagem do gráfico...');
 
@@ -170,14 +165,15 @@
         var ctx = canvas_grafico.getContext('2d');
         window.grafico_linha = Chart.Line(ctx, {
             data: dados,
+            //Configurações do gráfico
             options: {
                 responsive: true,
                 animation: { duration: 500 },
                 hoverMode: 'index',
                 stacked: false,
                 title: {
-                    display: false,
-                    text: 'Dados capturados'
+                    display: true,
+                    text: 'Histórico recente de umidade/temperatura'
                 },
                 scales: {
                     yAxes: [{
@@ -209,15 +205,22 @@
             }
         });
 
+        function sendData() {
+			var http = new XMLHttpRequest();
+			http.open('POST', 'http://localhost:3000/api/sendData', false);
+			http.send(null);
+		}
+
+        setInterval(() => {
+			sendData();
+		}, 2000);
+
+        //Atualiza os dados de 5 em 5 segundos
         setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
     }
 
-
-    // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
-    // buscando a última medida inserida em tabela contendo as capturas, 
-
-    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
-    //     Para ajustar o "select", ajuste o comando sql em src/models
+    // só mexer se quiser alterar o tempo de atualização
+    // ou se souber o que está fazendo!
     function atualizarGrafico(idAquario, dados) {
 
         fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
@@ -230,21 +233,17 @@
                     // tirando e colocando valores no gráfico
                     dados.labels.shift(); // apagar o primeiro
                     dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
-                    
                     dados.datasets[0].data.shift();  // apagar o primeiro de umidade
                     dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
-                    
-                    dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
-                    dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
+                    dados.datasets[1].data.shift();  // apagar o primeiro de umidade
+                    dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de umidade
 
                     window.grafico_linha.update();
 
-                    // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
                     proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
-                // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
                 proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
             }
         })

@@ -26,8 +26,8 @@
         <nav>
             <ul class="nav__links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#">Suites</a></li>
-                <li><a href="#">Sobre</a></li>
+                <li><a href="suite.html">Suites</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="#">Contato</a></li>
                 <li><a href="login.html">Login </a> | <a href="#"> Cadastro</a></li>
             </ul>
@@ -58,7 +58,7 @@
                 </div>
             </div>
 
-            <div class="card ">
+            <div class="card medio">
 
 
                 <div class="formulario">
@@ -92,9 +92,8 @@
                             </div>
 
                             <button class="btn" onclick="cadastrar()">Cadastrar</button>
-                            <button class="btn" onclick="teste()">teste</button>
-                            <label class="labell2">Ja tem algum cadastro?<a class="aa" href="login.html">
-                                    Logar</a></label>
+                            <!-- <button class="btn" onclick="teste()">teste</button> -->
+                            <label class="labell2">Ja tem algum cadastro?<a class="aa" href="login.html">Logar</a></label>
                         </div>
 
 
@@ -115,52 +114,37 @@
 </html>
 
 <script>
-    function teste() {
-        var diferencaAnos = d.getFullYear() - nascimento.getFullYear();
-        if (new Date(d.getFullYear(), d.getMonth(), d.getDate()) <
-            new Date(d.getFullYear(), nascimento.getMonth(), nascimento.getDate()))
-            diferencaAnos--;
-        return diferencaAnos;
+//     function teste() {
+//         var diferencaAnos = d.getFullYear() - nascimento.getFullYear();
+//         if (new Date(d.getFullYear(), d.getMonth(), d.getDate()) <
+//             new Date(d.getFullYear(), nascimento.getMonth(), nascimento.getDate()))
+//             diferencaAnos--;
+//         return diferencaAnos;
     
 
-    $("input").datepicker();
+//     $("input").datepicker();
 
 
-    $("button#teste").click(function () {
-        var nascimento = $("input:eq(3)").datepicker("getDate");
-        var d = new Date,
-             dia = date.getDate()
-             mes = date.getMonth()+1
-             ano = date.getFullYear();
+//     $("button#teste").click(function () {
+//         var nascimento = $("input:eq(3)").datepicker("getDate");
+//         var d = new Date,
+//              
              
 
-        if (nascimento && d)
-            $("span").text(idade(nascimento, d) + " anos");
-    });
+//         if (nascimento && d)
+//             $("span").text(idade(nascimento, d) + " anos");
+//     });
 
-    console.log(idade(new Date(1980, 11, 11), new Date()));
-    console.log(idade(new Date(2011, 1, 15), new Date()));
-    console.log(idade(new Date(1993, 4, 31), new Date()));
-}
+//     console.log(idade(new Date(1980, 11, 11), new Date()));
+//     console.log(idade(new Date(2011, 1, 15), new Date()));
+//     console.log(idade(new Date(1993, 4, 31), new Date()));
+// }
 
 
 
 
     function cadastrar() {
         aguardar();
-
-        //Barrando com a idade do cliente -- Entregavel //
-
-
-        // if (idade < 18) {
-
-        //     return false;
-        // } else {
-
-        // }
-
-
-
 
 
         //Recupere o valor da nova input pelo nome do id
