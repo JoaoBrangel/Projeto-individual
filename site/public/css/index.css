@@ -84,6 +84,7 @@ body{
     height: 100vh;
     margin-left: 10vw;
     margin-right: 10vw;
+    
 }
 .top-body-main{
     height: 20vh;
@@ -92,7 +93,7 @@ body{
     align-items: center;
     justify-content: space-between  ;
     padding: 10px 50px;
-    
+    border-bottom: 2px dotted var(--black2);
 }
 .top-body-main > p{
     
@@ -153,4 +154,48 @@ body{
 .hr{
     width: 90px;
     border: #287bff solid 20px;
+}
+
+.corpo-meio{
+    height: 90vh;
+    width: 96%;
+    justify-content: center;
+    display: flex;
+    justify-content: space-between;
+}
+.corpo-card{
+    width: 280px;
+    height: 300px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.corpo-card img{
+    height:70%;
+    width: 100%;
+}
+.corpo-card a{
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+    color: var(--amarelo2);
+    
+    width: 128px;
+    
+}
+.corpo-card a:hover{
+    text-decoration: underline;
+    
+}
+.corpo-card label{
+    color: #999;
+    margin-top: 6px;
+    font-size: 14px;
+    font-family: "Barlow", sans-serif;
+}
+.diva{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }

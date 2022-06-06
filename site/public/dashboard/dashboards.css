@@ -258,3 +258,79 @@ body {
 .dash{
   background-color: var(--grey);
 }
+
+
+.corpo-meio{
+  
+  height: 45vh;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--white);
+  box-shadow: 0 7px 25px rgb(0 0 0 / 8%);
+}
+.aa{
+  display: flex;
+  
+}
+.corpo-card{
+  width: 280px;
+  height: 300px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.corpo-card img{
+  height:70%;
+  width: 100%;
+}
+.corpo-card a{
+  margin-top: 10px;
+  font-size: 20px;
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  color: var(--amarelo2);
+  
+  width: 128px;
+  
+}
+.corpo-card a:hover{
+  text-decoration: underline;
+  
+}
+.corpo-card label{
+  color: #999;
+  margin-top: 6px;
+  font-size: 14px;
+  font-family: "Barlow", sans-serif;
+}
+.header-left > img{
+  width: 200px;
+  height: 150px;
+
+}
+
+
+.div-final{
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.div-final > select{
+  height: 30px;
+  width: 100px;
+}
+.div-final > button{
+  height: 30px;
+  width: 120px;
+  background-color: var(--black1);
+  color: var(--white);
+  border: 0;
+}

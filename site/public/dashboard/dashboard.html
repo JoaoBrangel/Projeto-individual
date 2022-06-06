@@ -2,11 +2,11 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon.ico" type="image/x-icon">
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AcquaTec | Dashboards</title>
+    <title>Nude motel | Analytcs</title>
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="dashboards.css">
@@ -19,7 +19,7 @@
 
     <!-- scripts do Chart.js -->
     <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
-
+    <link rel="icon" href="../img/logo2.png">
 </head>
 
 <body onload="validarSessao(), atualizarFeed()">
@@ -27,6 +27,7 @@
 
     <div class="janela">
         <div class="header-left">
+            <img src="../img/logook.png">
             <h1>Nude Motel</h1>
 
             <div class="hello">
@@ -41,8 +42,26 @@
 
         <div class="banner ">
             
+            
+
         </div>
         <div class="dash">
+
+
+            <div class="corpo-meio">
+                <h1>Suites mais em conta</h1>
+                <div class="aa">
+                <div class="corpo-card">
+                    <img src="../css/imgs-suites/suite 1.jpg">
+                    <a href="quartos/suiteVerri.html">Suíte Verri</a>
+                </div>
+                <div class="corpo-card">
+                    <img src="../css/imgs-suites/suite 3.jpg">
+                    <a href="quartos/suiteGomes.html" >Suíte Lima</a>
+                </div>
+            </div>
+            </div>
+            <div class="div-final">
             <select id="select_canal">
                 <option value="0">Canais</option>
                 <option value="1">Sbt</option>
@@ -68,6 +87,7 @@
         <button onclick="RegistrarCanal()">Registar canal</button>
     </div>
     </div>
+    </div>
 
 
 </body>
@@ -75,6 +95,28 @@
 </html>
 
 <script>
+
+
+function RegistrarCanal(){
+   alert ("Essa função ainda não esta funcionando, mas parabéns você teve uma ótima escolha")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     let proximaAtualizacao;
 

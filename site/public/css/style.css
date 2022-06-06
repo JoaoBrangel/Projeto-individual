@@ -1,7 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@300&display=swap');
-
+:root
+{   
+    --white: rgb(255, 255, 255);
+    --grey: #ecebeb;
+    --black1: #222;
+    --black4: rgb(19, 19, 19);
+    --black2: #999;
+    --black3: rgb(218, 218, 218);
+    --Vermelho: rgb(168, 8, 40);
+    --amarelo: #ecec50;
+    --amarelo2: #a8a838;
+    --azul: 	#4169E1;
+    --azul2: 	#264191;
+    
+}
 *{
   box-sizing: border-box;
 }
@@ -323,7 +337,7 @@ form{
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
+  
   background-color: #212124;
   /* border: 3px solid pink; */
 }
@@ -390,13 +404,14 @@ form{
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: #32b9cd;
-  color: white;
+  background-color: var(--white);
+  color: var(--black1);
   border-radius: 10px;
   text-align: center;
   padding: 10px 15px;
   margin-bottom: 100px;
   cursor: pointer;
+  width: 200px;
 }
 
 /* pagina extra - simulador */
