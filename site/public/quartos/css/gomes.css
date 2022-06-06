@@ -59,3 +59,184 @@ header{
     
     color: var(--black2);
 }
+
+
+
+.corpo{
+    background-color: var(--white);
+    height: 140vh;
+    width: 80%;
+    margin-top: -40px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    box-shadow: 0 7px 25px rgb(0 0 0 / 8%);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.corpo-parte1{
+    
+    height: 90%;
+    width: 1000px;
+}
+.corpo-top{
+    margin-bottom: 20px;
+    height: 8vh;
+    width: 96%;
+    align-items: center;
+    border-bottom: 2px dotted var(--black2);
+
+}
+.corpo-top > h1{
+    font-family: "Barlow", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+}
+.corpo-meio{
+    height: 60vh;
+    width: 96%;
+    justify-content: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: -40px;
+    flex-direction: row;
+}
+.corpo-card{
+    width: 600px;
+    height: 500px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: -20px;
+    
+}
+.corpo-card img{
+    height:70%;
+    width: 100%;
+}
+.corpo-link{
+    height: 500px;
+    width: 400px;
+    
+}
+.corpo-link-txt{
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 50px;
+    font-family: "Barlow", sans-serif;
+}
+.corpo-link-txt > h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--black1);
+}
+.corpo-link-txt > li{
+    text-decoration: none;
+}
+.corpo-link-txt2{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.corpo-link-txt2 label > a{
+    
+    font-family: "Barlow", sans-serif;
+    font-size: 13px;
+    font-weight: 200;
+    color: var(--black2);
+}
+.corpo-link-txt2 label > a:hover{
+    color: #222;
+    transition: 0.2s ease-in-out;
+}
+.corpo-link-txt22{
+    border-bottom:1px  var(--grey) solid;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.corpo-botton{
+    height: 38vh;
+    width: 96%;
+    justify-content: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: -40px;
+    flex-direction: row;
+    background-color: var(--grey);
+    justify-content: space-around;
+}
+.corpo-botton-txt{
+    margin: 20px;
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+    
+}
+.corpo-botton-txt2{
+    margin: 20px;
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+.corpo-botton-txt2 > span{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.corpo-botton-txt-titulos{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 300px;
+    font-family: "Barlow", sans-serif;
+    justify-content: space-around;
+}
+
+.corpo-botton-txt-titulos > label {
+    
+    font-size: 14px;
+    color: var(--black1);
+    font-weight: 400;
+}
+.corpo-botton-txt-ipts > select{
+    height: 30px;
+    width: 100px;
+    padding: 5px;
+    font-family: "Barlow", sans-serif;
+    font-size: 15px;
+}
+.corpo-botton-txt-ipts > button{
+    height: 30px;
+    width: 150px;
+    background-color: #222;
+    border: 0;
+    color: var(--white);
+    font-size: 16px;
+    border-radius: 10px;
+}
+.corpo-botton-txt-ipts{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+.corpo-botton-txt > label{
+    font-size: 16px ;
+    font-family: "Barlow", sans-serif;
+}
+
+
+
+
+
+.img-top{
+    background-image: url(img/topogomes.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 20vh;
+    box-shadow: 0px 10px 0px rgb(0 0 0 / 8%);
+}

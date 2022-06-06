@@ -54,7 +54,7 @@
 
 
 
-.nav__links > li,a,button{
+.nav__links > li,a{
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     text-transform: capitalize;
@@ -65,7 +65,7 @@
 }
 header{
     display: flex;
-    
+    margin-left: -155px;
     align-items: center;
     padding: 30px 10%;
     position: relative;
