@@ -181,7 +181,7 @@ margin: 5px;
 }
 .suite1{
     width: 300px;
-    height: 300px;
+    height: 350px;
     background: var(--vermelho2);
     background: url(imgs-suites/suite\ 1.jpg);
     background-size: cover;
@@ -190,7 +190,7 @@ margin: 5px;
 }
 .suite2{
     width: 300px;
-    height: 300px;
+    height: 350px;
     background: var(--vermelho2);
     background: url(imgs-suites/suite\ 2.jpg);
     background-size: cover;
@@ -198,14 +198,14 @@ margin: 5px;
 }
 .suite3{
     width: 300px;
-    height: 300px;
+    height: 350px;
     background: var(--vermelho2);
     background: url(imgs-suites/suite\ 3.jpg);
     background-size: cover;
     box-shadow: 2px 5px 5px var(--black2);
 }
 .card-index{
-    padding: 38% 0;
+    padding: 80% 0 0 ;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -216,10 +216,10 @@ margin: 5px;
     border: 1px solid #fff;
     padding: 10px;
     text-transform: uppercase;
-    font-size: 0.7
-    em;
+    font-size: 0.7em;
     letter-spacing: 2px;
-    text-align: center;   
+    text-align: center; 
+    width: 150px;  
 }
 /* o motel */
 .oMotel{
@@ -264,6 +264,8 @@ margin: 5px;
     align-items: center;
     justify-content: space-around;
     height: 140px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
 }
 
 
